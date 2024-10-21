@@ -9,8 +9,8 @@
 
 # Define variables
 MAKE          := make
-VENV		  := .venv
-PYTHON		  := $(VENV)/bin/python3
+VENV          := .venv
+PYTHON        := $(VENV)/bin/python3
 
 # Define directories
 MEDIA_DIR     := media
