@@ -9,7 +9,8 @@
 
 # Define variables
 MAKE          := make
-PYTHON        := python3
+VENV 		  := .venv
+PYTHON    	  := $(VENV)/bin/python3
 
 # Define directories
 MEDIA_DIR     := media
@@ -20,8 +21,9 @@ MAIN          := manage.py
 
 install:
 	sudo apt-get -y update
-	sudo apt-get -y install redis mysql-server libmysqlclient-dev python3-pip
-	pip3 install -r requirements_dev.txt --upgrade
+	sudo apt-get -y install redis mysql-server libmysqlclient-dev python3-pip python3-venv
+	python3 -m venv $(VENV)
+	$(VENV)/bin/pip install -r requirements_dev.txt --upgrade
 	$(MAKE) db
 
 start-mysql:
