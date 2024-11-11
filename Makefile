@@ -42,14 +42,14 @@ create-db:
 db: start-mysql clean create-db migrations
 
 docker-rebuild:
-	docker-compose build
+	docker compose build
 	$(MAKE) docker-start
 
 docker-start:
-	docker-compose up -d
+	docker compose up -d
 
 docker-stop:
-	docker-compose down
+	docker compose down
 
 admin:
 	$(PYTHON) $(MAIN) createsuperuser
